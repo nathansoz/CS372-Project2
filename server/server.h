@@ -1,6 +1,6 @@
-//
-// Created by nathan on 8/12/17.
-//
+/*
+ Created by nathan on 8/12/17.
+*/
 
 #ifndef SERVER_SERVER_H
 #define SERVER_SERVER_H
@@ -29,4 +29,4 @@ void server_loop(const char* port);
 
 
 
-#endif //SERVER_SERVER_H
+#endif 

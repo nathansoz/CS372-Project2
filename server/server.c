@@ -8,6 +8,10 @@
 #include <pthread.h>
 #include <tgmath.h>
 
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+
 #include <dirent.h>
 
 // get sockaddr, IPv4 or IPv6, from beej's guide
@@ -89,7 +93,7 @@ int recv_int(int fd)
     {
 
         ssize_t got = recv(fd, &message_size + message_header_bytes, sizeof(int) - message_header_bytes, 0);
-        message_header_bytes =+ got;
+        message_header_bytes += got;
     }
 
     message_size = ntohl((uint32_t)message_size);
@@ -113,7 +117,7 @@ char* recv_message(int fd)
     {
 
         ssize_t got = recv(fd, &message_size + message_header_bytes, sizeof(int) - message_header_bytes, 0);
-        message_header_bytes =+ got;
+        message_header_bytes += got;
     }
 
     message_size = ntohl((uint32_t)message_size);

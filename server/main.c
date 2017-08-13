@@ -74,4 +74,5 @@ int main(int argc, char** argv)
     printf("Starting server...\n");
 
     server_loop(argv[1]);
+    return 0;
 }

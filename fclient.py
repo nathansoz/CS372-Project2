@@ -120,8 +120,7 @@ def recv_file(sock: socket, filename: str):
     with open(filename, 'wb') as file:
         file.write(b''.join(recieved))
         file.flush()
-        os.fsync(file.fileno())
-
+    print("Got file {0}".format(filename))
 
 def connect_server(server: str, port: str):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
